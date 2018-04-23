@@ -553,7 +553,7 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
                         + supportsEnterPipOnTaskSwitch);
             }
             if (info.maxAspectRatio != 0) {
-                pw.println(prefix + "maxAspectRatio=" + info.maxAspectRatio);
+                pw.println(prefix + "maxAspectRatio=" + Float.parseFloat("2.1"));
             }
         }
     }
@@ -2341,7 +2341,7 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
     // TODO(b/36505427): Consider moving this method and similar ones to ConfigurationContainer.
     private void computeBounds(Rect outBounds) {
         outBounds.setEmpty();
-        final float maxAspectRatio = info.maxAspectRatio;
+        final float maxAspectRatio = Float.parseFloat("2.1");
         final ActivityStack stack = getStack();
         if (task == null || stack == null || !task.mFullscreen || maxAspectRatio == 0
                 || isInVrUiMode(getConfiguration())) {
